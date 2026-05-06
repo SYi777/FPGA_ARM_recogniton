@@ -1,0 +1,73 @@
+7767517
+71 81
+Input                    in0                      0 1 in0
+Convolution              convrelu_0               1 1 in0 1 0=64 1=3 5=1 6=576 9=1
+Split                    splitncnn_0              1 2 1 2 3
+Reshape                  reshape_45               1 1 3 4 0=92 1=22 11=64 2=1
+Pooling3D                maxpool3d_27             1 1 4 5 1=3 21=1 5=1
+Reshape                  reshape_46               1 1 5 6 0=90 1=20 2=64
+Split                    splitncnn_1              1 2 6 7 8
+Convolution              convrelu_1               1 1 8 9 0=32 1=1 5=1 6=2048 9=1
+Convolution              convrelu_2               1 1 9 10 0=32 1=1 11=3 14=1 5=1 6=3072 9=1
+Convolution              convrelu_3               1 1 10 11 0=32 1=3 11=1 4=1 14=0 5=1 6=3072 9=1
+Convolution              conv_13                  1 1 11 12 0=128 1=1 5=1 6=4096
+Convolution              conv_14                  1 1 7 13 0=128 1=1 5=1 6=8192
+BinaryOp                 add_0                    2 1 12 13 14
+ReLU                     relu_3                   1 1 14 15
+BatchNorm                bn_6                     1 1 15 16 0=128 1=1.000000e-05
+ReLU                     relu_34                  1 1 16 17
+Split                    splitncnn_2              1 2 17 18 19
+Reshape                  reshape_47               1 1 19 20 0=90 1=20 11=128 2=1
+Pooling3D                maxpool3d_28             1 1 20 21 1=3 21=1 2=2 12=1 5=1
+Reshape                  reshape_48               1 1 21 22 0=44 1=18 2=64
+Split                    splitncnn_3              1 2 22 23 24
+Convolution              convrelu_4               1 1 24 25 0=64 1=1 5=1 6=4096 9=1
+Convolution              convrelu_5               1 1 25 26 0=64 1=1 11=3 14=1 5=1 6=12288 9=1
+Convolution              convrelu_6               1 1 26 27 0=64 1=3 11=1 4=1 14=0 5=1 6=12288 9=1
+Convolution              conv_18                  1 1 27 28 0=256 1=1 5=1 6=16384
+Convolution              conv_19                  1 1 23 29 0=256 1=1 5=1 6=16384
+BinaryOp                 add_1                    2 1 28 29 30
+ReLU                     relu_4                   1 1 30 31
+BatchNorm                bn_7                     1 1 31 32 0=256 1=1.000000e-05
+ReLU                     relu_38                  1 1 32 33
+Split                    splitncnn_4              1 2 33 34 35
+Convolution              convrelu_7               1 1 35 36 0=64 1=1 5=1 6=16384 9=1
+Convolution              convrelu_8               1 1 36 37 0=64 1=1 11=3 14=1 5=1 6=12288 9=1
+Convolution              convrelu_9               1 1 37 38 0=64 1=3 11=1 4=1 14=0 5=1 6=12288 9=1
+Convolution              conv_23                  1 1 38 39 0=256 1=1 5=1 6=16384
+BinaryOp                 add_2                    2 1 39 34 40
+ReLU                     relu_5                   1 1 40 41
+BatchNorm                bn_8                     1 1 41 42 0=256 1=1.000000e-05
+ReLU                     relu_42                  1 1 42 43
+Split                    splitncnn_5              1 2 43 44 45
+Reshape                  reshape_49               1 1 45 46 0=44 1=18 11=256 2=1
+Pooling3D                maxpool3d_29             1 1 46 47 1=3 21=1 2=2 12=1 22=4 5=1
+Reshape                  reshape_50               1 1 47 48 0=21 1=16 2=64
+Convolution              convrelu_10              1 1 48 49 0=256 1=4 11=1 5=1 6=65536 9=1
+Convolution              convrelu_11              1 1 49 50 0=76 1=1 11=13 5=1 6=252928 9=1
+Split                    splitncnn_6              1 2 50 51 52
+Pooling                  avgpool2d_0              1 1 2 53 0=1 1=5 2=5 5=1 6=1
+Split                    splitncnn_7              1 2 53 54 55
+UnaryOp                  pow_3                    1 1 54 56 0=4
+Reduction                mean_52                  1 1 56 57 0=3
+BinaryOp                 add_4                    1 1 57 58 1=1 2=1.000000e-08
+BinaryOp                 div_5                    2 1 55 58 59 0=3
+Pooling                  avgpool2d_1              1 1 18 60 0=1 1=5 2=5 5=1 6=1
+Split                    splitncnn_8              1 2 60 61 62
+UnaryOp                  pow_6                    1 1 61 63 0=4
+Reduction                mean_53                  1 1 63 64 0=3
+BinaryOp                 add_7                    1 1 64 65 1=1 2=1.000000e-08
+BinaryOp                 div_8                    2 1 62 65 66 0=3
+Pooling                  avgpool2d_2              1 1 44 67 0=1 1=10 11=4 2=2 12=4 5=1 6=1
+Split                    splitncnn_9              1 2 67 68 69
+UnaryOp                  pow_9                    1 1 68 70 0=4
+Reduction                mean_54                  1 1 70 71 0=3
+BinaryOp                 add_10                   1 1 71 72 1=1 2=1.000000e-08
+BinaryOp                 div_11                   2 1 69 72 73 0=3
+UnaryOp                  pow_12                   1 1 51 74 0=4
+Reduction                mean_55                  1 1 74 75 0=3
+BinaryOp                 add_13                   1 1 75 76 1=1 2=1.000000e-08
+BinaryOp                 div_14                   2 1 52 76 77 0=3
+Concat                   cat_0                    4 1 59 66 73 77 78
+Convolution              conv_26                  1 1 78 79 0=76 1=1 5=1 6=39824
+Reduction                mean_51                  1 1 79 out0 0=3 1=0 -23303=1,1 5=1
