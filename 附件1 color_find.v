@@ -1,3 +1,7 @@
+// This open-source top-level logic is licensed under GPLv3
+// The external encrypted IP core instantiated here is closed-source proprietary IP,
+// users must obtain independent commercial license from the IP vendor separately.
+// GPLv3 copyleft only applies to HDL code written by the author, not third-party encrypted IP.
 `timescale 1ns / 1ps
 
 // ==========================================================
