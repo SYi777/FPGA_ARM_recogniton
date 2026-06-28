@@ -1,6 +1,6 @@
 # 开源协议与第三方组件声明
-## 1. FPGA自主代码（./FPGA_plate 目录）
-本目录下所有由本人独立编写的Verilog/VHDL、仿真、约束脚本文件，采用 **GNU GPLv3** 开源协议，完整协议见仓库根目录 `LICENSE`。
+## 1. FPGA自主代码（./MyCode 目录）
+本目录下所有由本人独立编写的Verilog/VHDL、仿真、约束脚本文件，采用 **GNU GPLv3** 开源协议，完整协议见仓库目录 `LICENSE`。
 
 ### 第三方闭源加密IP说明
 本FPGA工程功能依赖**紫光同创HDMI I2C读取加密IP核**：
